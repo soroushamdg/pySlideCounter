@@ -6,9 +6,9 @@ class pySlideCounter():
         self.path = path
         os.chdir(self.path)
         self.file_names = glob.glob('*.pptx')
-        self.counter = 0
     def count(self):
+        counter = 0
         for prs_name in self.file_names:
             per = pptx.Presentation(prs_name)
-            self.counter += len(per.slides)
-        return self.counter
+            counter += len(per.slides)
+        return counter
